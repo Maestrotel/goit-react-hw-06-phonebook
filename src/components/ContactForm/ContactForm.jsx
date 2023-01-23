@@ -16,6 +16,7 @@ export const ContactForm = ({ onAddContact }) => {
     e.preventDefault();
     // onAddContact(formData);
     dispatch(addContact({ name, number }));
+
     reset();
   };
 
