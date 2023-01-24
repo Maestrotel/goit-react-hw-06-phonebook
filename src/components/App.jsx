@@ -1,6 +1,5 @@
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
-import { nanoid } from 'nanoid';
 import { Filter } from './Filter/Filter';
 import css from './App.module.css';
 import { useEffect, useState } from 'react';
@@ -25,24 +24,24 @@ export const App = () => {
   //   }
   // }
 
-  const onAddContact = ({ name, number }) => {
-    const newContact = {
-      id: nanoid(),
-      name,
-      number,
-    };
+  // const onAddContact = ({ name, number }) => {
+  //   const newContact = {
+  //     id: nanoid(),
+  //     name,
+  //     number,
+  //   };
 
-    const contactPresent = contacts.filter(
-      ({ name }) => name.toLowerCase() === newContact.name.toLowerCase()
-    );
+  //   const contactPresent = contacts.filter(
+  //     ({ name }) => name.toLowerCase() === newContact.name.toLowerCase()
+  //   );
 
-    if (contactPresent.length) {
-      alert(`${name} is already in contacts`);
-      return;
-    }
+  //   if (contactPresent.length) {
+  //     alert(`${name} is already in contacts`);
+  //     return;
+  //   }
 
-    setContacts(prevContacts => [...prevContacts, newContact]);
-  };
+  //   setContacts(prevContacts => [...prevContacts, newContact]);
+  // };
 
   const deleteContact = contactId => {
     setContacts(contacts.filter(el => el.id !== contactId));
@@ -59,7 +58,7 @@ export const App = () => {
   return (
     <div className={css.mainSection}>
       <h1>Phonebook</h1>
-      <ContactForm onAddContact={onAddContact} />
+      <ContactForm />
       <h2>Contacts</h2>
       <Filter filter={filter} onFilterChange={onFilterChange} />
       <ContactList contacts={filteredContacts} deleteContact={deleteContact} />

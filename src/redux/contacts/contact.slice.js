@@ -18,17 +18,3 @@ const contactSlice = createSlice({
 export const { addContact } = contactSlice.actions;
 
 export default contactSlice.reducer;
-
-// reducer(state, action) {
-//         state.push(action.payload);
-//       },
-//       prepare(text) {
-//         return {
-//           payload: {
-//             text,
-//             id: nanoid(),
-//             completed: false,
-//           },
-//         };
-//       },
-//     },
