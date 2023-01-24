@@ -1,5 +1,4 @@
 import css from './ContactForm.module.css';
-// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contact.slice';
@@ -36,9 +35,6 @@ export const ContactForm = () => {
       ...prevState,
       [name]: value,
     }));
-    // 1 {name: '', number: 'a', }
-    // 2 { name: '', number: 'a4' }
-    // 3 {name: '', number: 'a47' }
   };
 
   const reset = () => {
@@ -84,7 +80,3 @@ export const ContactForm = () => {
     </form>
   );
 };
-
-// ContactForm.propTypes = {
-//   onAddContact: PropTypes.func.isRequired,
-// };
