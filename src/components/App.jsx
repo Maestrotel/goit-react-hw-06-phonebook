@@ -43,9 +43,9 @@ export const App = () => {
   //   setContacts(prevContacts => [...prevContacts, newContact]);
   // };
 
-  const deleteContact = contactId => {
-    setContacts(contacts.filter(el => el.id !== contactId));
-  };
+  // const deleteContact = contactId => {
+  //   setContacts(contacts.filter(el => el.id !== contactId));
+  // };
 
   // const onFilterChange = e => {
   //   setFilter(e.target.value);
@@ -61,7 +61,7 @@ export const App = () => {
       <ContactForm />
       <h2>Contacts</h2>
       <Filter />
-      <ContactList deleteContact={deleteContact} />
+      <ContactList />
     </div>
   );
 };
