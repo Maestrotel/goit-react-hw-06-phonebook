@@ -10,7 +10,7 @@ export const App = () => {
   const [contacts, setContacts] = useState(
     () => JSON.parse(localStorage.getItem(LOCAL_KEY)) ?? []
   );
-  const [filter, setFilter] = useState('');
+  // const [filter, setFilter] = useState('');
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -47,21 +47,21 @@ export const App = () => {
     setContacts(contacts.filter(el => el.id !== contactId));
   };
 
-  const onFilterChange = e => {
-    setFilter(e.target.value);
-  };
+  // const onFilterChange = e => {
+  //   setFilter(e.target.value);
+  // };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   return (
     <div className={css.mainSection}>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
-      <Filter filter={filter} onFilterChange={onFilterChange} />
-      <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
+      <Filter />
+      <ContactList deleteContact={deleteContact} />
     </div>
   );
 };

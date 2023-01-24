@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contact.slice';
 
-export const ContactForm = ({ onAddContact }) => {
+export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     number: '',
